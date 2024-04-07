@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+*{
+  margin: 0;
+padding: 0;
+box-sizing: border-box;}
+
+  :root {
+    --Playfairfont: "Playfair Display", serif;
+    --blue:#404beb;
+    --green:rgb(105, 128, 0);
+    --headerlineargradient:radial-gradient(circle farthest-side, #fceabb, #f8b500);
+    --darkerlineargradient:radial-gradient(circle farthest-side, #cabc97, #bd8b02);
+  }
+
+body{
+  min-height: 100vh;
+ 
+  
+}
+.bluebtn{
+  background: var(--headerlineargradient);
+  color: var(--blue);
+  font-style: var(--Playfairfont);
+  font-weight: 900;
+  transition: 0.3s ease-in-out;
+  
+}
+.bluebtn:hover{
+ background: var(--darkerlineargradient);
+ color: var(--blue);
+ font-style: var(--Playfairfont);
+ font-weight: 900;
+}
+
+.yellowbtn{
+  width: 100%;
+
+  font-style: var(--Playfairfont);
+  font-weight: 900;
+  transition: 0.3s ease-in-out;
+  border: none;
+  border-radius: 5px;
+  font-size: larger;
+  padding: 0.55rem 0.125rem !important;
+  
+  background: var(--darkerlineargradient);
+  color: var(--blue);
+}
+.yellowbtn:hover{
+  opacity: 0.8;
+}
+
+
+/*custom scrollbar starts here*/
+/* Width */
+::-webkit-scrollbar {
+  width: 10px; /* for Chrome, Safari, and Opera */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f8b500 /* color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--blue); /* color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bd8b02; /* color of the scrollbar handle on hover */
+}
+/* Width */
+html {
+  scrollbar-width: thin; /* "auto" or "thin" */
+}
+
+/* Track */
+html {
+  scrollbar-color: #f8b500   var(--blue);; /* color of the track and handle */
+}
+
+/*customk scrollbar end here*/
+
+@media (max-width: 576px) {
+  .bluebtn{
+    background: var(--headerlineargradient);
+    color: var(--blue);
+    font-style: var(--Playfairfont);
+    font-weight: 900;
+    transition: 0.3s ease-in-out;
+    font-size: larger;
+    
+  }
+}
+

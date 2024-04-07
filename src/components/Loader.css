@@ -1,0 +1,9 @@
+.LoaderPage{
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 9997;
+}
+.LoaderPage .spinner-border{
+    color: var(--blue);
+}

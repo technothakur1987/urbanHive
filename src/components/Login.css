@@ -1,0 +1,81 @@
+.Login {
+    min-height: 100vh;
+    font-family: var(--Playfairfont);
+  }
+  .centerLogin {
+    min-width: 40vw;
+    background: var(--headerlineargradient);
+  }
+  .centerLogin h2 {
+    text-align: center;
+    font-family: var(--Playfairfont);
+    font-weight: 900;
+    color: var(--blue);
+   
+  }
+  .Login input {
+    background: transparent;
+  
+    border: none;
+  
+    border-radius: 5px;
+    border-image: none;
+    padding: 0.25rem 0.125rem;
+    box-shadow: 1px 1px 5px 1px #bd8b02;
+    color: var(--blue);
+  }
+  .Login input::placeholder {
+    color: var(--blue);
+    padding: 0.25rem 0.125rem;
+    opacity: 0.7;
+  }
+  .Login input:active {
+    background: transparent !important;
+  
+    border: none !important;
+  
+    border-radius: 5px !important;
+    border-image: none !important;
+    padding: 0.25rem 0.125rem !important;
+    box-shadow: 1px 1px 5px 1px #966f05 !important;
+    outline: none !important;
+  }
+  .Login input:focus {
+    background: transparent !important;
+  
+    border: none !important;
+  
+    border-radius: 5px !important;
+    border-image: none !important;
+    padding: 0.25rem 0.125rem !important;
+    box-shadow: 1px 1px 5px 1px #966f05 !important;
+    outline: none !important;
+  }
+  .Login input:selected {
+    background: transparent !important;
+  
+    border: none !important;
+  
+    border-radius: 5px !important;
+    border-image: none !important;
+    padding: 0.25rem 0.125rem !important;
+    box-shadow: 1px 1px 5px 1px #966f05 !important;
+    outline: none !important;
+  }
+  
+  .Login h6{
+      color: grey;
+  }
+  .sideLink{
+      color: var(--blue)!important;
+     
+      text-decoration: none;
+      font-family: var(--Playfairfont);
+    font-weight: 700;
+    font-size: larger;
+    margin-left: 0.25rem;
+    transition: 0.3s ease-in-out;
+  }
+  .sideLink:hover{
+      color: #bd8b02!important;
+  }

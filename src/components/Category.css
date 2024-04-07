@@ -1,0 +1,69 @@
+.category{
+    
+    overflow-x: scroll;
+    overflow: hidden; /* Hide the scrollbar */
+    width: 100%;
+
+}
+.category-Ul{
+    display: flex;
+    gap: 5.5rem;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    scroll-behavior: smooth;
+}
+
+.category-Ul::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+.category .img-fluid{
+    height:5.0rem;
+    width: 5.0rem!important;
+}
+.yellow-bg{
+    background: var(--headerlineargradient);
+    padding: 1.0rem;
+    height:6.5rem;
+    width: 6.5rem!important;
+}
+.bluetext{
+    color: var(--blue);
+    font-style: var(--Playfairfont);
+    font-weight: 600;
+    text-transform: capitalize;
+    
+}
+
+@media (max-width: 576px){
+    .category-Ul{
+        display: flex;
+        gap: 1.5rem;
+        width: 100%;
+        height: 100%;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+        scrollbar-width: none; /* Hide scrollbar in Firefox */
+        scroll-behavior: smooth;
+    }
+
+    .category .img-fluid{
+        height:4rem;
+        width: 4rem!important;
+    }
+    .yellow-bg{
+        background: var(--headerlineargradient);
+        padding: 0.5rem;
+        height:4.5rem;
+        width: 4.5rem!important;
+    }
+    .nopxmq{
+        padding-left: 0!important;
+        padding-right: 0!important;
+        padding-top: 1rem!important;
+        padding-bottom: 1rem!important;
+    }
+
+}

@@ -1,0 +1,76 @@
+.testimonial{
+font-family: var(--Playfairfont);
+}
+.testimonial h2{
+    text-align: center;
+    color: var(--blue);
+    font-weight: 700;
+}
+.testimonial .headingp{
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+.testimonial .headingpsopan{
+    color: #f8b500;
+    opacity: 1!important;
+    
+    
+}
+.testimonial img{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+.testimonial .card-title{
+    color: var(--blue);
+    text-align: center;
+}
+.testimonial .job{
+    font-size: smaller;
+    text-align: center;
+}
+.testimonial .card-text{
+    color: var(--blue);
+    text-align: center;
+    font-weight: 600;
+}
+.testimonial .bordertopyellow{
+    border-top: 4px solid #f8b500;
+    
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+
+
+@media (max-width: 576px) {
+
+.testimonial{
+    padding-top: 1.0rem!important;
+}
+.testimonial img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+.testimonial .headingp{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+.testimonial .bordertopyellow{
+    border-top: 4px solid #f8b500;
+    
+    padding-top: 1rem;
+    margin-top: 1.0rem;
+}
+
+
+}

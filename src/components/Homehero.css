@@ -1,0 +1,17 @@
+.homehero img{
+    height: 45vh;
+    width: 100vw;
+    object-fit: cover;
+}
+.homehero{
+    background: var(--headerlineargradient);
+}
+
+@media (max-width: 576px) {
+    .homehero img{
+        height: 40vh;
+        width: 100vw;
+        object-fit: cover;
+    }
+
+}

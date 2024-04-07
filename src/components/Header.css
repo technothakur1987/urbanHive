@@ -1,0 +1,59 @@
+.header{
+    height: 20vh;
+    background: var(--headerlineargradient);
+    font-family: var(--Playfairfont);
+
+}
+.logoDiv h3{
+    font-family: var(--Playfairfont);
+    font-weight: 900;
+    background: linear-gradient(to right, var(--blue), var(--green));
+    color: transparent;
+    background-clip:text;
+    -webkit-background-clip: text;
+    
+   
+    
+    
+    
+    
+}
+
+.Navlink{
+    text-decoration: none!important;
+    text-transform: none;
+    font-weight: 600;
+    color: var(--blue);
+   
+}
+.gapul{
+    gap: 1.5rem;
+}
+@media (max-width: 576px) {
+    .header{
+        min-height:25vh;
+        background: var(--headerlineargradient);
+        font-family: var(--Playfairfont);
+    
+    }
+
+
+    .mqjustify-content-center{
+        justify-content: center!important;
+       
+    }
+    .logoDiv h3{
+        font-size: 2.5rem!important;
+        margin-top: 0.9rem;
+    }
+    .Navlink{
+        font-size: 1.0rem;
+        
+    }
+    .mqul{
+        margin-top: 0.5rem!important;
+    }
+    .gapul{
+        gap: 1rem;
+    }
+}

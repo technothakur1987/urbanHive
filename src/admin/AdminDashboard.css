@@ -1,0 +1,69 @@
+.admindashboard {
+    min-height: 100vh;
+}
+.admin-header{
+    height: 20vh;
+    background: var(--headerlineargradient);
+    font-family: var(--Playfairfont);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #bd8b02;
+    
+
+}
+.admin-header h2{
+    font-family: var(--Playfairfont);
+    font-weight: 900;
+    background: linear-gradient(to right, var(--blue), var(--green));
+    color: transparent;
+    background-clip:text;
+    -webkit-background-clip: text;
+    
+}
+.adminDetails{
+   min-height: 20vh;
+    background: var(--headerlineargradient);
+    font-family: var(--Playfairfont);
+    border-radius: 10px;
+    border: 1px solid #bd8b02;
+}
+.userimage-wrapper{
+    background-color: var(--blue);
+    padding: 1px;
+    box-shadow: 0px 1px 10px 2px #bd8b02;
+}
+.userimage-wrapper .img-fluid{
+    height: 8rem!important;
+}
+.adminDetails h6{
+    font-family: var(--Playfairfont);
+    font-weight: 900;
+    color: var(--blue);
+    text-align: center;
+   font-size: larger;
+}
+.adminDetails h6 span{
+    font-size: smaller;
+    font-weight: 700;
+}
+.adminLinksSection{
+    min-height: 10vh;
+   
+}
+.adminLinks{
+    background: var(--headerlineargradient);
+    min-height: 10vh;
+    min-width: 25%;
+    font-family: var(--Playfairfont);
+    font-weight: 900;
+    color: var(--blue);
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #bd8b02;
+    box-shadow: 0px 1px 10px 2px #bd8b02;
+}
+.adminLinks:hover{
+    background: var(--darkerlineargradient);
+}

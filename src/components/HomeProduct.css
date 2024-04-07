@@ -1,0 +1,40 @@
+.HomeProducts h2{
+    font-family: var(--Playfairfont);
+    font-weight: 700;
+    color: var(--blue);
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.HomeProducts .card-img-top{
+    height:fit-content!important;
+    object-fit: contain;
+    
+   
+}
+.HomeProducts .card-title{
+    font-family: var(--Playfairfont);
+    font-weight: 800;
+    color: var(--blue);
+}
+.HomeProducts .card-text{
+    font-family: var(--Playfairfont);
+    font-weight: 700;
+    color: var(--blue);
+}
+.HomeProducts .logoname{
+    font-family: var(--Playfairfont);
+    font-weight: 900;
+    opacity: 0.5;
+    font-size: 0.6rem;
+    
+}
+
+
+@media (max-width: 576px) {
+    .HomeProducts .card-img-top{
+        height:fit-content!important;
+        object-fit: contain;
+        
+       
+    }
+}

@@ -1,0 +1,9 @@
+.main-content{
+    padding-top: 20vh;
+}
+
+@media (max-width: 576px) {
+    .main-content{
+        padding-top: 25vh;
+    }
+}

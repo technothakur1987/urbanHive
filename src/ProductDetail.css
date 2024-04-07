@@ -1,0 +1,96 @@
+.productDetail{
+    padding-top: 20vh;
+    min-height: 90vh;
+    font-style: var(--Playfairfont);
+}
+.productDetail .img-fluid{
+
+   max-height: 70vh;
+
+}
+.productDetail h2{
+    font-style: var(--Playfairfont);
+    font-weight: 900;
+    color: var(--blue);
+    text-align: start;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    position: relative;
+}
+.productDetail h2::before{
+    content: 'URBAN-HIVE';
+    color: grey;
+    font-style: var(--Playfairfont);
+    font-weight: 900;
+    font-size: 1.5rem;
+    position: absolute;
+    opacity: 0.5;
+    top: -1.5rem;
+    
+}
+.productDetail .star{
+    gap: 1rem;
+}
+.productDetail .desc{
+    position: relative;
+    font-style: var(--Playfairfont);
+    font-weight: 600;
+   
+}
+.productDetail .desc::before{
+    content:'description :';
+    position:absolute ;
+    top: -5vh;
+    font-style: var(--Playfairfont);
+    font-weight: 700;
+    color: var(--blue);
+    text-transform: capitalize;
+    font-size: 1.5rem;
+
+}
+.productDetail .price{
+    font-style: var(--Playfairfont);
+    font-weight: 700;
+    color: var(--blue);
+    text-align: center;
+}
+
+.productDetail .fa-star{
+    color: #f8b500;
+    font-size: 1.9rem;
+}
+
+
+@media (max-width: 576px) {
+    .productDetail h2{
+        margin-bottom: 2rem!important;
+        margin-top: 4rem!important;
+        text-align: center;
+    }
+    .star{
+        justify-content: center!important;
+        width: 100%;
+        margin-bottom: 2rem!important;
+    }
+    .productDetail .price{
+        margin-bottom: 2rem!important;
+        text-align: center!important;
+        justify-content: center!important;
+        width: 100%!important;
+    }
+    .productDetail .desc{
+        margin-bottom: 2rem!important;
+        margin-top: 2rem!important;
+        text-align: justify;
+       
+    }
+    .productDetail .desc::before{
+        text-align: center!important;
+        transform: translateX(0%);
+    }
+    .productDetail .img-fluid{
+
+        margin-top: 2rem!important;
+     
+     }
+}
