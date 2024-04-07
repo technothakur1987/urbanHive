@@ -16,7 +16,8 @@ import CartPage from './user/CartPage.jsx';
 import { Toaster } from 'react-hot-toast';
 import AdminProducts from './admin/AdminProducts.jsx';
 import AdminOrder from './admin/AdminOrder.jsx';
-import AdminCart from './admin/AdminCart.jsx';
+import AdminUsers from './admin/AdminUsers.jsx';
+import AddProduct from './admin/component/AddProduct.jsx';
 
 
 
@@ -65,8 +66,10 @@ import AdminCart from './admin/AdminCart.jsx';
 
             <Route path='adminProducts' element={<AdminProducts/>}></Route>
             <Route path='adminOrder' element={<AdminOrder/>}></Route>
-            <Route path='adminCart' element={<AdminCart/>}></Route>
+            <Route path='AdminUsers' element={<AdminUsers/>}></Route>
+            
           </Route>
+          <Route path='/addProduct' element={<AddProduct/>}/>
           <Route path='/cart' element={<CartPage/>}/>
           <Route path='/*' element={<ErrorPage/>}/>
           

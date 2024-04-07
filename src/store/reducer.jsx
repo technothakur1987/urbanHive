@@ -28,6 +28,17 @@ let reducer = (state, action) => {
           ...state,
           loading: false
         };
+
+        
+
+      case 'SET-ALL-PRODUCTS':
+        return {
+          ...state,
+          loading: false,
+          allProducts:action.payload
+        };
+
+         
   
       default:
         return state;

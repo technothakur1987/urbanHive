@@ -11,8 +11,11 @@ const AdminDashboard = () => {
   useEffect(()=>{
       
     dispatch({type:'GET-LOGIN-USER'})
+    window.scrollTo(0, 500);
    
   },[])
+
+ 
  
   
 
@@ -45,7 +48,7 @@ const AdminDashboard = () => {
                 <Link to='adminOrder' className='adminLinks d-flex  flex-column justify-content-center align-items-center text-decoration-none py-2'> <i className="fa-solid fa-list-check fs-1 "></i>
                   <h3 className='mb-0  fw-bolder'>50</h3>
                   <h5>Total Orders</h5></Link>
-                <Link to='adminCart' className='adminLinks d-flex  flex-column justify-content-center align-items-center text-decoration-none py-2'> <i className="fa-solid fa-users fs-1 "></i>
+                <Link to='AdminUsers' className='adminLinks d-flex  flex-column justify-content-center align-items-center text-decoration-none py-2'> <i className="fa-solid fa-users fs-1 "></i>
                   <h3 className='mb-0  fw-bolder'>112</h3>
                   <h5>Total Users</h5></Link>
                 
