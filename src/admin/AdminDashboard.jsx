@@ -7,13 +7,17 @@ import { Link, Outlet } from 'react-router-dom';
 
 const AdminDashboard = () => {
   
-  let { loginUser ,dispatch} = useContext(AppContext);
+  let { loginUser ,dispatch,allProducts} = useContext(AppContext);
   useEffect(()=>{
       
     dispatch({type:'GET-LOGIN-USER'})
     window.scrollTo(0, 500);
    
   },[])
+  
+  useEffect(()=>{
+    window.scrollTo(0, 500);
+  })
 
  
  
@@ -42,7 +46,7 @@ const AdminDashboard = () => {
               <div className='adminLinksSection d-flex  align-items-center justify-content-around my-3'>
                 <Link to='adminProducts' className='adminLinks d-flex flex-column justify-content-center align-items-center text-decoration-none py-2'>
                   <i className="fa-solid fa-basket-shopping fs-1 "></i>
-                  <h3 className='mb-0  fw-bolder'>10</h3>
+                  <h3 className='mb-0  fw-bolder'>{allProducts.length}</h3>
                   <h5>Total Products</h5>
                   </Link>
                 <Link to='adminOrder' className='adminLinks d-flex  flex-column justify-content-center align-items-center text-decoration-none py-2'> <i className="fa-solid fa-list-check fs-1 "></i>

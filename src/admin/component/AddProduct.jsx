@@ -105,7 +105,7 @@ const AddProduct = () => {
 
   };
   return (
-    <div >    <div className="signup d-flex justify-content-center align-items-center ">
+    <div >    <div className="signup d-flex justify-content-center align-items-center addproduct">
     {loading ? (
       <>
         <Loader />
@@ -243,7 +243,9 @@ const AddProduct = () => {
           }}
         >
           <h2 className="mb-2 text-uppercase">Add Product </h2>
-          <div className="w-100 py-2 ">
+
+          <div className='row'>
+          <div className=" col-6 py-2 ">
             <label htmlFor="productTitle"></label>
             <input
               type="text"
@@ -255,7 +257,8 @@ const AddProduct = () => {
               onChange={handleOnChange}
             />
           </div>
-          <div className="w-100 py-2 ">
+
+          <div className="col-6 py-2 ">
             <label htmlFor="productPrice"></label>
             <input
               type="number"
@@ -269,7 +272,7 @@ const AddProduct = () => {
             />
           </div>
 
-          <div className="w-100 py-2 ">
+          <div className="col-6 py-2 ">
             <label htmlFor="productRating"></label>
             <input
               type="number"
@@ -280,10 +283,12 @@ const AddProduct = () => {
               autoComplete="off"
               value={formdata.productRating}
               onChange={handleOnChange}
+              min={0}
+              max={5}
             />
           </div>
 
-          <div className="w-100 py-2 ">
+          <div className="col-6 py-2 ">
             <label htmlFor="productQty"></label>
             <input
               type="number"
@@ -296,19 +301,8 @@ const AddProduct = () => {
               onChange={handleOnChange}
             />
           </div>
-          <div className="w-100 py-2 ">
-            <label htmlFor="productImgUrl"></label>
-            <input
-              type="text"
-              id="productImgUrl"
-              name="productImgUrl"
-              placeholder="Product Image Url"
-              className="w-100"
-              value={formdata.productImgUrl}
-              onChange={handleOnChange}
-            />
-          </div>
-          <div className="w-100 py-2 ">
+
+          <div className="col-6 py-2 ">
             <select name="productFeatured" id="productFeatured" className="w-100 categorySelect " value={formdata.productFeatured}
               onChange={handleOnChange}>
                     <option value="" >Featured Product</option>
@@ -318,7 +312,8 @@ const AddProduct = () => {
                    
             </select>
           </div> 
-           <div className="w-100 py-2 ">
+
+          <div className="col-6 py-2 ">
             <select name="productCategory" id="productCategory" className="w-100 categorySelect " value={formdata.productCategory}
               onChange={handleOnChange}>
                     <option  value="">Select a Category </option>
@@ -331,6 +326,31 @@ const AddProduct = () => {
                             })}
             </select>
           </div> 
+
+          <div className="col-12 py-2 ">
+            <label htmlFor="productImgUrl"></label>
+            <input
+              type="text"
+              id="productImgUrl"
+              name="productImgUrl"
+              placeholder="Product Image Url"
+              className="w-100"
+              value={formdata.productImgUrl}
+              onChange={handleOnChange}
+            />
+          </div>
+
+
+          </div>
+          
+          
+
+          
+
+         
+          
+          
+          
 
           <div className="w-100 py-2 ">
             <label htmlFor="productDesc"></label>
