@@ -38,6 +38,14 @@ let reducer = (state, action) => {
           allProducts:action.payload
         };
 
+
+        case 'SET-ALL-CATEGORY':
+          return {
+            ...state,
+            loading: false,
+            allcategories:action.payload
+          };
+
          
   
       default:

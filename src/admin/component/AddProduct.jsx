@@ -13,33 +13,13 @@ import { fireDB } from '../../firebase/FirebaseConfig';
 const AddProduct = () => {
 
     let navigate = useNavigate()
-  let { loading, dispatch } = useContext(AppContext);
-  const categoryList = [
-    {
-        name: 'fashion'
-    },
-    {
-        name: 'shirt'
-    },
-    {
-        name: 'jacket'
-    },
-    {
-        name: 'mobile'
-    },
-    {
-        name: 'laptop'
-    },
-    {
-        name: 'shoes'
-    },
-    {
-        name: 'home'
-    },
-    {
-        name: 'books'
-    }
-]
+  let { loading, dispatch,allcategories } = useContext(AppContext);
+  console.log(allcategories)
+
+  let categoryList = [...allcategories]
+  console.log(categoryList)
+  
+
   let [formdata, setformdata] = useState({
     productTitle: "",
     productCategory:"",
@@ -88,6 +68,14 @@ const AddProduct = () => {
     ) {
       return toast.error("All Fields are required");
     }
+    if (
+      
+      formdata.productRating > 5 
+      
+         
+    ) {
+      return toast.error("Product Rating Should be below 5");
+    }
 
     dispatch({type:'LOADER-TRUE'})
 
@@ -119,7 +107,9 @@ const AddProduct = () => {
           }}
         >
           <h2 className="mb-2 text-uppercase">Add Product </h2>
-          <div className="w-100 py-2 ">
+
+          <div className='row'>
+          <div className=" col-6 py-2 ">
             <label htmlFor="productTitle"></label>
             <input
               type="text"
@@ -131,7 +121,8 @@ const AddProduct = () => {
               onChange={handleOnChange}
             />
           </div>
-          <div className="w-100 py-2 ">
+
+          <div className="col-6 py-2 ">
             <label htmlFor="productPrice"></label>
             <input
               type="number"
@@ -145,7 +136,7 @@ const AddProduct = () => {
             />
           </div>
 
-          <div className="w-100 py-2 ">
+          <div className="col-6 py-2 ">
             <label htmlFor="productRating"></label>
             <input
               type="number"
@@ -156,10 +147,12 @@ const AddProduct = () => {
               autoComplete="off"
               value={formdata.productRating}
               onChange={handleOnChange}
+              min={0}
+              max={5}
             />
           </div>
 
-          <div className="w-100 py-2 ">
+          <div className="col-6 py-2 ">
             <label htmlFor="productQty"></label>
             <input
               type="number"
@@ -172,7 +165,32 @@ const AddProduct = () => {
               onChange={handleOnChange}
             />
           </div>
-          <div className="w-100 py-2 ">
+
+          <div className="col-6 py-2 ">
+            <select name="productFeatured" id="productFeatured" className="w-100 categorySelect " value={formdata.productFeatured}
+              onChange={handleOnChange}>
+                    <option value="" >Featured Product</option>
+                    <option className=" comOption"  value='yes'>Yes</option>
+                    <option className=" comOption"  value='no'>No</option>
+                    
+                   
+            </select>
+          </div> 
+
+          <div className="col-6 py-2 ">
+          <select name="productCategory" id="productCategory" className="w-100 categorySelect " value={formdata.productCategory} onChange={handleOnChange}>
+    <option value="">Select a Category </option>
+    {categoryList ? categoryList.map((value, index) => {
+        const { name } = value;
+        return (
+            <option className="comOption" key={index} value={name}>{name}</option>
+        );
+    }) : ''}
+</select>
+
+          </div> 
+
+          <div className="col-12 py-2 ">
             <label htmlFor="productImgUrl"></label>
             <input
               type="text"
@@ -184,29 +202,18 @@ const AddProduct = () => {
               onChange={handleOnChange}
             />
           </div>
-          <div className="w-100 py-2 ">
-            <select name="productFeatured" id="productFeatured" className="w-100 categorySelect " value={formdata.productFeatured}
-              onChange={handleOnChange}>
-                    <option value="" >Featured Product</option>
-                    <option className=" comOption"  value='yes'>Yes</option>
-                    <option className=" comOption"  value='no'>No</option>
-                    
-                   
-            </select>
-          </div> 
-           <div className="w-100 py-2 ">
-            <select name="productCategory" id="productCategory" className="w-100 categorySelect " value={formdata.productCategory}
-              onChange={handleOnChange}>
-                    <option  value="">Select a Category </option>
-                    
-                    {categoryList.map((value, index) => {
-                                const { name } = value
-                                return (
-                                    <option className=" comOption" key={index} value={name}>{name}</option>
-                                )
-                            })}
-            </select>
-          </div> 
+
+
+          </div>
+          
+          
+
+          
+
+         
+          
+          
+          
 
           <div className="w-100 py-2 ">
             <label htmlFor="productDesc"></label>

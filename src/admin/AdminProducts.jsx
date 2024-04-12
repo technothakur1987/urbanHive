@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../store/store";
 import Loader from "../components/Loader";
 import { deleteDoc,doc } from "firebase/firestore";
@@ -9,6 +9,8 @@ import toast from "react-hot-toast";
 
 
 const AdminProducts = () => {
+
+  let navigate = useNavigate();
   let { allProducts, loading, dispatch } = useContext(AppContext);
   console.log(allProducts);
 
@@ -36,6 +38,7 @@ const AdminProducts = () => {
     }else if(e.target.classList[1] === 'fa-pen'){
 
       console.log('update this product')
+      navigate(`/updateProduct/:${e.target.dataset.id}`)
 
     }
 
@@ -95,20 +98,20 @@ const AdminProducts = () => {
                     <th scope="row">{index+1}</th>
                     <td className="mqw-100">
                       <div className="d-flex align-items-start justify-content-around">
-                        <img src={productImgUrl} alt={productTitle} className="img-thumbnail"/>
+                        <img src={productImgUrl} alt={productTitle} className="img-thumbnail" style={{maxHeight:'5rem'}}/>
                         <div className="prDetails text-start">
                           <p className="title text-dark text-uppercase">{productTitle}</p>
                           <p className="price text-dark">Rs {productPrice} /-</p>
                           <p className="category text-dark">{productCategory}</p>
                           <p className="Qty text-dark fs-5">{productQty} <span className="fs-6 fw-lighter">in stocks</span></p>
                           <p className="rating text-dark">{productRating} / 5</p>
-                          <p className="featured text-dark">{productFeatured ? 'Featured': "Not Featured"}</p>
+                          <p className="featured text-dark">{productFeatured === 'yes' ? 'Featured': "Not Featured"}</p>
                           <p className="id text-dark">{id}</p>
                         </div>
 
                       </div>
                     </td>
-                    <td className="text-start desciptonProduct" >{productDesc}<span className="fs-5 fw-bolder"> ( {date})</span></td>
+                    <td className="text-start desciptonProduct " >{productDesc}<span className="fs-5 fw-bolder"> ( {date})</span></td>
                     
                     
                     <td>

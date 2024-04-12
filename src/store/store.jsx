@@ -12,7 +12,8 @@ let AppContext = createContext();
 let initialState = {
   loading: false, 
   loginUser: null,
-  allProducts:[]
+  allProducts:[],
+  allcategories:[]
 };
 
 
@@ -47,8 +48,34 @@ let AppProvider = ({ children }) => {
     }
 }
 
+const getAllCategoryFunction = async () => {
+  dispatch({type:'LOADER-TRUE'})
+  try {
+      const q = query(
+          collection(fireDB, "category"),
+          orderBy('id')
+      );
+      const data = onSnapshot(q, (QuerySnapshot) => {
+          let cat_Array = [];
+          QuerySnapshot.forEach((doc) => {
+              cat_Array.push({ ...doc.data(), id: doc.id });
+          });
+
+          console.log(cat_Array)
+          
+          dispatch({ type: "LOADER-FALSE" });
+          dispatch({type:'SET-ALL-CATEGORY', payload:cat_Array})
+      });
+      return () => data;
+  } catch (error) {
+      console.log(error);
+      dispatch({ type: "LOADER-FALSE" });
+  }
+}
+
   useEffect(()=>{
     getAllProductFunction()
+    getAllCategoryFunction()
     
   },[])
 

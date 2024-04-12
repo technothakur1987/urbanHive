@@ -18,6 +18,7 @@ import AdminProducts from './admin/AdminProducts.jsx';
 import AdminOrder from './admin/AdminOrder.jsx';
 import AdminUsers from './admin/AdminUsers.jsx';
 import AddProduct from './admin/component/AddProduct.jsx';
+import UpdateProduct from './admin/component/UpdateProduct.jsx';
 
 
 
@@ -70,6 +71,7 @@ import AddProduct from './admin/component/AddProduct.jsx';
             
           </Route>
           <Route path='/addProduct' element={<AddProduct/>}/>
+          <Route path='/updateProduct/:productId' element={<UpdateProduct/>}/>
           <Route path='/cart' element={<CartPage/>}/>
           <Route path='/*' element={<ErrorPage/>}/>
           
