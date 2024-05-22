@@ -21,7 +21,8 @@ const Home = () => {
   
   return (
     <>
-     <Header/>
+   
+     
     <div className='main-content'>
       <Homeheo/>
       <Category/>
@@ -33,7 +34,7 @@ const Home = () => {
     
     </div>
 
-    <Footer/>
+   
     </>
     
   )

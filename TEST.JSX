@@ -1,32 +1,34 @@
-import React, { useContext, useEffect } from 'react'
-import { AppContext } from './store/store'
-import Loader from './components/Loader'
-import { useNavigate } from 'react-router-dom'
-import './ProductDetail.css'
+import React, { useContext, useState, useEffect } from "react";
+import "./AllProducts.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "./store/store";
+import Loader from "./components/Loader";
 import toast from "react-hot-toast";
 
-
-
-
-
 const AllProducts = () => {
-  let  navigate = useNavigate()
-  let {dispatch, loading, allProducts, loginUser,allCart} = useContext(AppContext)
-  console.log(allCart)
+  let navigate = useNavigate();
+  let { loading, allProducts, dispatch, loginUser } = useContext(AppContext);
+  const [allproducts, setallProducts] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
 
-  },[])
+  useEffect(() => {
+    setallProducts(allProducts);
+  }, []);
   return (
     <>
-    <div className="px-3 AllProducts ">
-    <h2 className="mt-3">Our Products</h2>
+      <div className="px-3 AllProducts ">
+        <h2 className="mt-3">Our Products</h2>
 
-    {
-      loading ? <Loader />:
-      <div className="row row-cols-1 row-cols-md-4 g-4">
-            {allProducts.map((product) => {
+        {loading ? (
+          <Loader />
+        ) : (
+          <div className="row row-cols-1 row-cols-md-4 g-4">
+            {allproducts.map((product) => {
               return (
                 <div
                   className="col text-decoration-none Liink"
@@ -62,10 +64,7 @@ const AllProducts = () => {
                               "Plz Register/Login to Add the Product to cart"
                             );
                           } else {
-                            
                             dispatch({ type: "ADD-TO-CART", payload: product });
-                            navigate('/cart')
-
                           }
                         }}
                       >
@@ -78,22 +77,11 @@ const AllProducts = () => {
               );
             })}
           </div>
-    }
-
-
-
-
-
-
-
-
-
-
-    </div>
-
+        )}
+      </div>
+      <Footer />
     </>
+  );
+};
 
-  )
-}
-
-export default AllProducts
+export default AllProducts;

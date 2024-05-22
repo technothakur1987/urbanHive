@@ -96,6 +96,15 @@ body{
   opacity: 0.8;
 
 }
+.Liink:hover{
+cursor: pointer;
+}
+.alertClass{
+  background: var(--headerlineargradient);
+  color: var(--blue);
+  font-style: var(--Playfairfont);
+  font-weight: 400;
+}
 
 
 /*custom scrollbar starts here*/

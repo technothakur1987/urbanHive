@@ -83,12 +83,14 @@ const AddProduct = () => {
         const productRef = collection(fireDB, 'products');
         await addDoc(productRef, formdata)
         toast.success("Add product successfully");
-        navigate('/admin-dashboard/adminProducts')
+        
         dispatch({ type: "LOADER-FALSE" });
+        navigate('/admin-dashboard/adminProducts')
     } catch (error) {
         console.log(error);
         dispatch({ type: "LOADER-FALSE" });
         toast.error("Add product failed");
+        navigate('/admin-dashboard/adminProducts')
     }
 
   };

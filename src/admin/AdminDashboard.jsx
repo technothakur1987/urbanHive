@@ -7,7 +7,7 @@ import { Link, Outlet } from 'react-router-dom';
 
 const AdminDashboard = () => {
   
-  let { loginUser ,dispatch,allProducts} = useContext(AppContext);
+  let { loginUser ,dispatch,allProducts,allUsers } = useContext(AppContext);
   useEffect(()=>{
       
     dispatch({type:'GET-LOGIN-USER'})
@@ -29,7 +29,7 @@ const AdminDashboard = () => {
     <>
       {loginUser ? (
         <>
-          <div className="admin-header mx-3 my-3">
+          <div className="admin-header mx-3 my-0">
             <h2 className='text-uppercase'>Admin Dashboard</h2>
           </div>
 
@@ -53,7 +53,7 @@ const AdminDashboard = () => {
                   <h3 className='mb-0  fw-bolder'>50</h3>
                   <h5>Total Orders</h5></Link>
                 <Link to='AdminUsers' className='adminLinks d-flex  flex-column justify-content-center align-items-center text-decoration-none py-2'> <i className="fa-solid fa-users fs-1 "></i>
-                  <h3 className='mb-0  fw-bolder'>112</h3>
+                  <h3 className='mb-0  fw-bolder'>{allUsers.length}</h3>
                   <h5>Total Users</h5></Link>
                 
               </div>

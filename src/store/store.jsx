@@ -13,7 +13,10 @@ let initialState = {
   loading: false, 
   loginUser: null,
   allProducts:[],
-  allcategories:[]
+  allcategories:[],
+  allFeatured:[],
+  allUsers:[],
+  allCart:JSON.parse(localStorage.getItem('cart'))||[]
 };
 
 
@@ -22,6 +25,33 @@ let AppProvider = ({ children }) => {
 
   
   let [state, dispatch] = useReducer(reducer, initialState);
+
+  const getAllUsersFunction = async () => {
+    dispatch({type:'LOADER-TRUE'})
+    try {
+        const q = query(
+            collection(fireDB, "users"),
+            orderBy('time')
+        );
+        const data = onSnapshot(q, (QuerySnapshot) => {
+            let usersArray = [];
+            QuerySnapshot.forEach((doc) => {
+              usersArray.push({ ...doc.data(), id: doc.id });
+            });
+
+            console.log(usersArray)
+            
+            
+            dispatch({ type: "LOADER-FALSE" });
+            dispatch({type:'GET-ALL-USERS',payload:usersArray})
+            
+        });
+        return () => data;
+    } catch (error) {
+        console.log(error);
+        dispatch({ type: "LOADER-FALSE" });
+    }
+}
 
   const getAllProductFunction = async () => {
     dispatch({type:'LOADER-TRUE'})
@@ -37,9 +67,12 @@ let AppProvider = ({ children }) => {
             });
 
             console.log(productArray)
+            let featuredProducts = productArray.filter((item)=>{ return item.productFeatured === 'yes'})
+            console.log(featuredProducts)
             
             dispatch({ type: "LOADER-FALSE" });
             dispatch({type:'SET-ALL-PRODUCTS', payload:productArray})
+            dispatch({type:'SET-FEATURED-PRODUCTS', payload:featuredProducts})
         });
         return () => data;
     } catch (error) {
@@ -76,6 +109,7 @@ const getAllCategoryFunction = async () => {
   useEffect(()=>{
     getAllProductFunction()
     getAllCategoryFunction()
+    getAllUsersFunction()
     
   },[])
 

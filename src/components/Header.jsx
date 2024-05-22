@@ -9,11 +9,9 @@ import { reducer } from "../store/reducer";
 
 const Header = () => {
   
-  let { loading, loginUser,dispatch} = useContext(AppContext);
+  let { loading, loginUser,dispatch,allCart} = useContext(AppContext);
   
-  console.log(loading);
-  console.log(loginUser);
-
+ 
   useEffect(()=>{
       
     dispatch({type:'GET-LOGIN-USER'})
@@ -73,11 +71,11 @@ const Header = () => {
               loginUser !== null && loginUser.role === "admin" ? (
                 <>
                   {" "}
-                  <li>
+                  {/* <li>
                     <NavLink to="/signup" className="Navlink">
                       Signup
                     </NavLink>
-                  </li>
+                  </li> */}
                   <li>
                     <NavLink to="/admin-dashboard/adminProducts" className="Navlink">Admin</NavLink>
                   </li>
@@ -96,11 +94,11 @@ const Header = () => {
               loginUser !== null && loginUser.role === "user" ? (
                 <>
                   
-                  <li>
+                  {/* <li>
                     <NavLink to="/signup" className="Navlink">
                       Signup
                     </NavLink>
-                  </li>
+                  </li> */}
                   <li>
                     <NavLink to="/user-dashboard" className="Navlink text-capitalize">
                       {`${loginUser.fullname}`}
@@ -111,7 +109,7 @@ const Header = () => {
                   </li>
                   <li>
               <NavLink to="/cart" className="Navlink">
-                Cart(0)
+                Cart({allCart.length})
               </NavLink>
             </li>
                 </>

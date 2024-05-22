@@ -1,0 +1,21 @@
+.errorPage{
+    width: 100%;
+    min-height: 99.98vh;
+    background: var(--headerlineargradient);
+    font-family: var(--Playfairfont);
+    z-index: 5001;
+
+}
+.errorcenterpage{
+    min-width: 40vw;
+    min-height: 40vh;
+    background-color: aliceblue;
+    box-shadow: -20px 18px 11px 3px #ddb12b;
+}
+.errorcenterpage .img-fluid{
+    height: 10em;
+}
+.data h1{
+    font-size: 6rem;
+    font-weight: 900;
+}

@@ -1,0 +1,17 @@
+/* ScrollToTop.css */
+.scroll-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 9999;
+  }
+  
+  .scroll-to-top div {
+    background: var(--headerlineargradient);
+    font-family: var(--Playfairfont);
+    padding: 0.5rem 0.9rem;
+    border-radius: 50%;
+    text-align: center;
+  }
+  

@@ -1,6 +1,10 @@
 .Login {
-    min-height: 100vh;
-    font-family: var(--Playfairfont);
+  min-height: 100vh;
+  font-family: var(--Playfairfont);
+  position: absolute;
+  z-index: 5000;
+  width: 100%;
+  background-color: white;
   }
   .centerLogin {
     min-width: 40vw;
