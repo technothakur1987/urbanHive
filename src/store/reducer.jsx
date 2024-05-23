@@ -79,13 +79,46 @@ let reducer = (state, action) => {
           
         }
         
-  
-        
-  
         return {
           ...state,
           allCart: cartCopy
         };
+
+        case "INCREMENT":
+          console.log(action.payload);
+          let incrementedCart = state.allCart.map(product =>
+            product.id === action.payload ? { ...product, productQty: parseInt(product.productQty) + 1 } : product
+          );
+          
+          localStorage.setItem("cart", JSON.stringify(incrementedCart));
+    
+          return {
+            ...state,
+            allCart: incrementedCart
+          };
+
+          case "DECREMENT":
+      console.log(action.payload);
+      let decrementedCart = state.allCart.map(product =>
+        product.id === action.payload && product.productQty > 1 ? { ...product, productQty: parseInt(product.productQty) - 1 } : product
+      );
+      localStorage.setItem("cart", JSON.stringify(decrementedCart));
+
+      return {
+        ...state,
+        allCart: decrementedCart
+      };
+
+    case "REMOVE":
+      console.log(action.payload);
+      let updatedCart = state.allCart.filter(product => product.id !== action.payload);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+      return {
+        ...state,
+        allCart: updatedCart
+      };
+    
 
             
       

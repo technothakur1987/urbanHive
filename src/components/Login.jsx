@@ -63,7 +63,7 @@ const Login = () => {
       let users;
       QuerySnapshot.forEach((doc) => users = doc.data());
       console.log(users)
-      localStorage.clear();
+      localStorage.removeItem('user');
       localStorage.setItem("user", JSON.stringify(users) )
     
 
