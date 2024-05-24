@@ -73,6 +73,10 @@ const Signup = () => {
       let user = {
         fullname: formdata.fullname,
         email: formdata.email,
+        address:' ',
+        phone: ' ',
+        postalCode:' ',
+        panCard:'',
         password: formdata.password,
         role: "user",
         id: formdata.id,

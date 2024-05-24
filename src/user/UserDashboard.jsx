@@ -24,21 +24,16 @@ const UserDashboard = () => {
  
   return (
    <>
-   {/* <Header/>
-   <div className='userdashboard py-5' style={{minHeight:'100vh'}}>
-    <h1 className='my-5 py-5'>this is user dashboard</h1>
-
-   </div>
-   <Footer/> */}
+   
 
 {loginUser ? (
         <>
-          <Header/>
+         
    <div className='userdashboard py-5' style={{minHeight:'100vh'}}>
     <h1 className='my-5 py-5'>this is user dashboard</h1>
 
    </div>
-   <Footer/>
+   
         </>
       ) : (
         <Login/>

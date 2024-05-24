@@ -74,7 +74,8 @@
         margin-bottom: 1.5rem;
         margin-top: 1.0rem;
         
-        transform: translateX(50%);
+        width: 100%;
+        
     }
 
 

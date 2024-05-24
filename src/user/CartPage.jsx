@@ -28,7 +28,7 @@ const CartPage = () => {
   };
 
   const totalPrice = calculateTotalPrice();
-  const deliveryCharge = totalPrice > 1000 ? 0 : totalPrice * 0.1;
+  const deliveryCharge = totalPrice > 1000 ? 0 : Math.round(totalPrice * 0.1);
   const finalPrice = totalPrice + deliveryCharge;
 
   return (
